@@ -21,4 +21,7 @@
 # Element vs Component
 <img src="https://github.com/impactice/react/blob/main/element/element11.png" alt="element11" width="800"/>
 <img src="https://github.com/impactice/react/blob/main/element/element12.png" alt="element12" width="800"/>
-<img src="https://github.com/impactice/react/blob/main/element/element13.png" alt="element13" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element13.png" alt="element13" width="800"/> 
+
+# Element 특징 
+<img src="https://github.com/impactice/react/blob/main/element/element18.png" alt="element18" width="800"/>
