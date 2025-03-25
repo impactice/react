@@ -12,6 +12,12 @@
 <img src="https://github.com/impactice/react/blob/main/element/element9.png" alt="element9" width="800"/> 
 <img src="https://github.com/impactice/react/blob/main/element/element10.png" alt="element10" width="800"/>
 
+# Element 생김새2
+<img src="https://github.com/impactice/react/blob/main/element/element14.png" alt="element14" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element15.png" alt="element15" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element16.png" alt="element16" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element17.png" alt="element17" width="800"/>
+
 # Element vs Component
 <img src="https://github.com/impactice/react/blob/main/element/element11.png" alt="element11" width="800"/>
 <img src="https://github.com/impactice/react/blob/main/element/element12.png" alt="element12" width="800"/>
