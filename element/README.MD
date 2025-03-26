@@ -55,6 +55,12 @@
 <img src="https://github.com/impactice/react/blob/main/element/element33.png" alt="element33" width="800"/> 
 
 # React로 DOM 변경하기-2
-
+<img src="https://github.com/impactice/react/blob/main/element/element40.png" alt="element40" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element41.png" alt="element41" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element42.png" alt="element42" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element43.png" alt="element43" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element44.png" alt="element44" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element45.png" alt="element45" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element46.png" alt="element46" width="800"/> 
 # 요약
 <img src="https://github.com/impactice/react/blob/main/element/element19.png" alt="element19" width="800"/> 
