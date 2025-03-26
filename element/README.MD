@@ -27,5 +27,7 @@
 <img src="https://github.com/impactice/react/blob/main/element/element18.png" alt="element18" width="800"/> 
 
 # React Element는 불변
+<img src="https://github.com/impactice/react/blob/main/element/element20.png" alt="element20" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element21.png" alt="element21" width="800"/>
 
 # Element 랜더링
