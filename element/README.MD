@@ -26,4 +26,6 @@
 # Element 특징 
 <img src="https://github.com/impactice/react/blob/main/element/element18.png" alt="element18" width="800"/> 
 
+# React Element는 불변
+
 # Element 랜더링
