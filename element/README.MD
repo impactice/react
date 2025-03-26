@@ -53,3 +53,4 @@
 # React로 DOM 변경하기-2
 
 # 요약
+<img src="https://github.com/impactice/react/blob/main/element/element19.png" alt="element19" width="800"/> 
