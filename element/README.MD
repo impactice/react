@@ -34,3 +34,7 @@
 <img src="https://github.com/impactice/react/blob/main/element/element22.png" alt="element22" width="800"/>
 <img src="https://github.com/impactice/react/blob/main/element/element23.png" alt="element23" width="800"/> 
 <img src="https://github.com/impactice/react/blob/main/element/element24.png" alt="element24" width="800"/>
+
+# 렌더링된 엘리먼트 업데이트하기
+
+# React로 DOM 변경하기
