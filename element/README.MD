@@ -39,3 +39,11 @@
 <img src="https://github.com/impactice/react/blob/main/element/element25.png" alt="element25" width="800"/>
 
 # React로 DOM 변경하기
+<img src="https://github.com/impactice/react/blob/main/element/element26.png" alt="element26" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element27.png" alt="element27" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element28.png" alt="element28" width="800"/>
+<img src="https://github.com/impactice/react/blob/main/element/element29.png" alt="element29" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element30.png" alt="element30" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element31.png" alt="element31" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element32.png" alt="element32" width="800"/> 
+<img src="https://github.com/impactice/react/blob/main/element/element33.png" alt="element33" width="800"/>
