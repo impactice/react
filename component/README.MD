@@ -23,8 +23,6 @@
 3. **렌더링**:
    - `notifications` 배열에 저장된 알림들을 순차적으로 렌더링합니다. 각 알림은 `Notification` 컴포넌트로 표시되며, 각 `Notification`에 `id`와 `message`를 전달합니다.
 
-### 코드 예시
-
 ```javascript
 import React from "react";
 import Notification from "./Notification"; // Notification 컴포넌트를 가져옵니다.
