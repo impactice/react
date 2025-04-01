@@ -108,6 +108,7 @@ root.render(element);
 
 # 컴포넌트 합성 
 - 여러 개의 컴포넌트를 합쳐서 하나의 컴포넌트를 만드는 것 
+
 ![Image](https://github.com/user-attachments/assets/7e7d2a6d-1bec-4725-874e-d93bfe37c988)
 ```jsx 
 function Welcome(props) { 
