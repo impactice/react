@@ -31,27 +31,21 @@
 ## Props 사용법
 
 - **키-값 쌍의 형태**:  
-  Props는 **키-값** 쌍의 형태로 전달됩니다. 예를 들어, `name="John"`, `age={30}` 처럼 데이터를 전달합니다.
+  Props는 **키-값** 쌍의 형태로 전달됩니다. 
   
 - **문자열 이외의 데이터**:  
   문자열 이외에 정수, 변수, 다른 컴포넌트 등이 props에 들어갈 경우에는 **중괄호({ })**를 이용해 전달합니다.
-
-### 예시:
 ```jsx
-// 문자열
-<ChildComponent name="John" />
-
-// 변수
-const age = 30;
-<ChildComponent age={age} />
-
-// 다른 컴포넌트
-<ChildComponent component={<AnotherComponent />} />
- ```
-
-- Props의 특징 -읽기 전용 
- - 모든 리액트 컴포넌트는 그들의 props에 관해서 Pure 함수 같은 역할을 해야함 
- - 모든 리액트 컴포넌트는 props를 직접 바꿀 수 없고, 같은 props에 대해서는 항살 같은 결과를 보여줘야 
+function App(props) {
+  return ( 
+    <Profile 
+      name="소플" 
+      introduction="안녕하세요, 소플입니다."
+      viewCount={1500}
+    />
+  );
+}
+ ``` 
 
 # mutable immutable 차이
 - Mutable한 객체는 생성된 이후에 상태가 변경될 수 있는 객체이고, Immutable한 객체는 생성된 이후에 상태가 변경되지 않는 객체를 말한다.
