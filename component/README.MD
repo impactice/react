@@ -28,6 +28,20 @@
 - **모든 리액트 컴포넌트는 props를 직접 바꿀 수 없고, 같은 props에 대해서는 항상 같은 결과를 보여줘야 함**:  
   컴포넌트는 props를 직접 수정할 수 없으며, 동일한 props에 대해서는 항상 **일관된** 결과를 출력해야 합니다.
 
+```jsx
+// pure 함수 
+// input을 변경하지 않으며 같은 input에 대해서 항상 같은 output을 리턴 
+function sum(a,b) {
+  return a+b;
+}
+ ``` 
+```jsx
+// impure 함수 
+// input을 변경함 
+function withdraw(account, amount) {
+  account.total -= amount;
+}
+ ```
 ## Props 사용법
 
 - **키-값 쌍의 형태**:  
