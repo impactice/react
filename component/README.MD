@@ -1,6 +1,6 @@
 # 컴포넌트에 대해 알아보기 
 - 리액트에서는 모든 페이지가 컴포넌트로 구성되어 있고, 하나의 컴포넌트는 또 다른 여러 개의 컴포넌트의 조합으로 구성될 수 있다. 
-
+> ![Image](https://github.com/user-attachments/assets/106446b5-d284-4f1b-9998-2b4d3a557b97)
 - 리액트 컴포넌트의 역할 
   - 어떠한 속성들을 입력으로 받아서 그에 맞는 **리액트 엘리먼트를 생성하여 리턴해 주는 것** 
   - 화면에 나타날 엘리멘트를 생성
@@ -9,7 +9,7 @@
 ## Props의 개념
 - Props는 리액트에서 **속성(properties)** 을 의미하며, 부모 컴포넌트가 자식 컴포넌트에 전달하는 **데이터**입니다.
 - 자식 컴포넌트는 이 props를 **읽기 전용**으로 사용할 수 있습니다.
-> ![Image](https://github.com/user-attachments/assets/106446b5-d284-4f1b-9998-2b4d3a557b97)
+![Image](https://github.com/user-attachments/assets/a00c079c-2c5b-4726-9242-d309edae0a1c)
 
 ## Property, 리액트 컴포넌트의 속성
 - 리액트 컴포넌트에서 **Property(속성)** 은 부모 컴포넌트에서 자식 컴포넌트로 전달되는 데이터를 의미합니다.
