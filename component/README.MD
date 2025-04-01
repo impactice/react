@@ -72,6 +72,7 @@ function Welcome(props) {
   return <h1>안녕, {props.name}</h1>;
 }
  ```  
+
 - 클래스 컴포넌트 
 ```jsx 
 class Welcome extends React.Component {
@@ -80,11 +81,51 @@ class Welcome extends React.Component {
     }
 }
 ``` 
+
 - 컴포넌트 이름 짓기 
   - 컴포넌트의 이름은 **항상 대문자로 시작**해야 됨
   - 리액트는 소문자로 시작하는 컴포넌트를 DOM 태그로 인식하기 때문 
     - 'div'나 'span': React.createElement()로 전달 
-    - '<Foo />': React.createElement(Foo)로 전달
+    - '<Foo />': React.createElement(Foo)로 전달 
+```jsx 
+// HTML div 태그로 인식 
+const element = <div />; 
+
+// Welcome이라는 리액트 컴포넌트로 인식 
+const element = <Welcome name="인제" />;
+``` 
+- 컴포넌트 렌더링 
+  - Virtual DOM에서 실제 DOM으로 이동하는 과정 
+```jsx 
+function Welcome(props) {
+  return <h1>안녕, {props.name}</h1>;
+}
+
+const element = <Welcome name="인제" />;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+``` 
+
+# 컴포넌트 합성 
+- 여러 개의 컴포넌트를 합쳐서 하나의 컴포넌트를 만드는 것 
+```jsx 
+function Welcome(props) { 
+  return <h1>Hello, {props.name}</h1>;
+} 
+
+function App(props) { 
+  return {
+    <div> 
+      <Welcome name="Mike" />
+      <Welcome name="Steve" />
+      <Welcome name="Jane" /> 
+    </div> 
+  }
+} 
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<App />);
+``` 
 # mutable immutable 차이
 - Mutable한 객체는 생성된 이후에 상태가 변경될 수 있는 객체이고, Immutable한 객체는 생성된 이후에 상태가 변경되지 않는 객체를 말한다.
 # Notification.jsx와 오류 해결법 
