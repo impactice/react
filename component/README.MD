@@ -64,7 +64,7 @@ function App(props) {
 # 컴포넌트 만들기 
 - 컴포넌트의 종류
   - 함수 컴포넌트를 개선(Hook,7장)하여 주로 사용
-
+![Image](https://github.com/user-attachments/assets/5504b90a-b59a-4ee3-a151-aca98f002c06)
 - 함수 컴포넌트 -간단함
 ```jsx 
 function Welcome(props) {
