@@ -80,6 +80,11 @@ class Welcome extends React.Component {
     }
 }
 ``` 
+- 컴포넌트 이름 짓기 
+  - 컴포넌트의 이름은 **항상 대문자로 시작**해야 됨
+  - 리액트는 소문자로 시작하는 컴포넌트를 DOM 태그로 인식하기 때문 
+    -'div'나 'span': React.createElement()로 전달 
+    -'<Foo />': React.createElement(Foo)로 전달
 # mutable immutable 차이
 - Mutable한 객체는 생성된 이후에 상태가 변경될 수 있는 객체이고, Immutable한 객체는 생성된 이후에 상태가 변경되지 않는 객체를 말한다.
 # Notification.jsx와 오류 해결법 
