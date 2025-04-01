@@ -47,7 +47,7 @@ const age = 30;
 
 // 다른 컴포넌트
 <ChildComponent component={<AnotherComponent />} />
- 
+ ```
 
 - Props의 특징 -읽기 전용 
  - 모든 리액트 컴포넌트는 그들의 props에 관해서 Pure 함수 같은 역할을 해야함 
