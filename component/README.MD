@@ -61,7 +61,24 @@ function App(props) {
   );
 }
  ``` 
+# 컴포넌트 만들기 
+- 컴포넌트의 종류
+  - 함수 컴포넌트를 개선(Hook,7장)하여 주로 사용
 
+- 함수 컴포넌트 -간단함
+```jsx 
+function Welcome(props) {
+  return <h1>안녕, {props.name}</h1>;
+}
+ ```  
+- 클래스 컴포넌트 
+```jsx 
+class Welcome extends React.Component {
+  render() {
+    return <h1>안녕, {this.props.name}</h1>;
+    }
+}
+``` 
 # mutable immutable 차이
 - Mutable한 객체는 생성된 이후에 상태가 변경될 수 있는 객체이고, Immutable한 객체는 생성된 이후에 상태가 변경되지 않는 객체를 말한다.
 # Notification.jsx와 오류 해결법 
