@@ -9,7 +9,8 @@
 ## Props의 개념
 - Props는 리액트에서 **속성(properties)** 을 의미하며, 부모 컴포넌트가 자식 컴포넌트에 전달하는 **데이터**입니다.
 - 자식 컴포넌트는 이 props를 **읽기 전용**으로 사용할 수 있습니다.
-https://github.com/impactice/react/issues/2#issue-2962615286
+> ![Image](https://github.com/user-attachments/assets/106446b5-d284-4f1b-9998-2b4d3a557b97)
+
 ## Property, 리액트 컴포넌트의 속성
 - 리액트 컴포넌트에서 **Property(속성)** 은 부모 컴포넌트에서 자식 컴포넌트로 전달되는 데이터를 의미합니다.
 - 각 컴포넌트는 자신이 받은 props를 통해 부모와 데이터를 주고받습니다.
