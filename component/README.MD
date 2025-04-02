@@ -239,4 +239,70 @@ const comments = [
 export default CommentList; 
 ```
 # Notification.jsx와 오류 해결법 
+```jsx
+import React from "react";
+import Notification from "./Notification";
+const reservedNotifications = [
+    {
+        id: 1,
+        message: "안녕하세요, 오늘 일정을 알려드립니다.",
+    },
+    {
+        id: 2,
+        message: "점심식사 시간입니다.",
+    },
+    {
+        id: 3,
+        message: "이제 곧 미팅이 시작됩니다.",
+    },
+];
+var timer;
+class NotificationList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            notifications: [],
+        };
+    }
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            this.setState((prevState) => {
+                if (prevState.notifications.length < reservedNotifications.length) {
+                    return {
+                        notifications: [...prevState.notifications, reservedNotifications[prevState.notifications.length]],
+                    };
+                }
+                return prevState; // 알림 목록을 초기화하지 않음
+            });
+        }, 1000);
+    }
+    
+    componentWillUnmount() {
+        if (this.timer) {
+            clearInterval(this.timer);
+        }
+    }
+    componentWillUnmount() {
+        if (timer) {
+            clearInterval(timer);
+        }
+    }
+    render() {
+        return (
+            <div>
+                {this.state.notifications.map((notification) => {
+                    return (
+                        <Notification
+                            key={notification.id}
+                            id={notification.id}
+                            message={notification.message}
+                        />
+                    );
+                })}
+            </div>
+        );
+    }
+}
+export default NotificationList;
 
+```
