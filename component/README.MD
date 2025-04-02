@@ -316,7 +316,53 @@ componentDidMount() {
 - 작동 방식: 
   - 1. 1초마다 setState를 호출 
   - 2. 현재 알림 배열의 길이(prevState.notitications.length)를 기준으로 다음 알림을 추가 
-  - 3. 모든 알림이 추가되면 상태를 더 이상 업데이트하지 않는다.
+  - 3. 모든 알림이 추가되면 상태를 더 이상 업데이트하지 않는다. 
+
+#### componentWillUnmount 
+```jsx
+componentWillUnmount() {
+    if (this.timer) {
+        clearInterval(this.timer);
+    }
+}
+``` 
+- 역할: 
+  - 컴포넌트가 화면에서 제거되기 전에 호출된다. 
+  - 타이머(setlnterval)를 제거하여 메모리 누수를 방지 
+
+#### render 메서드 
+```jsx
+render() {
+    return (
+        <div>
+            {this.state.notifications.map((notification) => {
+                return (
+                    <Notification
+                        key={notification.id}
+                        id={notification.id}
+                        message={notification.message}
+                    />
+                );
+            })}
+        </div>
+    );
+}
+``` 
+- 역할: 
+  - 상태(state)에 저장된 알림 데이터를 화면에 렌더링한다. 
+  - notifications 배열의 각 항목을 Notification 컴포넌트로 변환한다. 
+- 출력 결과: 
+  - 각 알림은 고유한 key값과 메시지를 표시한다. 
+
+#### 실행 흐름 
+- 컴포넌트 마운트: 
+  - componentDidMount가 호출되어 1초마다 알림이 추가 
+- 랜더링: 
+  - 상태가 업데이트되면 render 메서드가 호출되어 새로운 알림이 화면에 표시된다. 
+- 컴포넌트 언마운트: 
+  - componentwillUnmount가 호출되어 타이머가 제거 
+
+
 #### 수정본
 ```jsx
 import React from "react";
