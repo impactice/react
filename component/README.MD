@@ -239,6 +239,44 @@ const comments = [
 export default CommentList; 
 ```
 # Notification.jsx와 오류 해결법 
+
+### 1.reservedNotifications 배열 
+```jsx 
+const reservedNotifications = [
+    {
+        id: 1,
+        message: "안녕하세요, 오늘 일정을 알려드립니다.",
+    },
+    {
+        id: 2,
+        message: "점심식사 시간입니다.",
+    },
+    {
+        id: 3,
+        message: "이제 곧 미팅이 시작됩니다.",
+    },
+];
+``` 
+#### 역할 
+- reservedNotifications는 고정된 알림 데이터를 미리 정의한 배열 
+- 각 객체는 다음의 두 가지 속성을 포함 
+  - id:알림의 고유 식별자 
+  - message: 알림 메시지 내용 
+
+#### 작동 방식 
+- 예를 들어, reservedNotifications[0]은 첫 번째 알림으로, id가 1, 메시지가 "안녕하세요, 오늘 일정을 알려드립니다." 
+- 이 배열은 컴포넌트 내부에서 상태(state)를 업데이트하는 원본 데이터로 사용된다. 
+
+#### 클라스형 컴포넌트 
+```jsx
+class NotificationList extends React.Component { 
+```
+- NotificationList는 알림 목록을 관리하고 화면에 표시하는 React클래스형 컴포넌트이다.
+- 내부 상태(state)와 생명주기 메서드(componentDidMount, componentWillUnmount)를 활용하여 동작한다.
+
+
+
+#### 수정본
 ```jsx
 import React from "react";
 import Notification from "./Notification";
