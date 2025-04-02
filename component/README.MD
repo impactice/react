@@ -274,8 +274,49 @@ class NotificationList extends React.Component {
 - NotificationList는 알림 목록을 관리하고 화면에 표시하는 React클래스형 컴포넌트이다.
 - 내부 상태(state)와 생명주기 메서드(componentDidMount, componentWillUnmount)를 활용하여 동작한다.
 
+#### constructor와 초기 상태 설정
+```jsx
+constructor(props) {
+    super(props);
+    this.state = {
+        notifications: [],
+    };
+}
+``` 
+- constructor: 
+  - React 클래스형 컴포넌트에서 초기 상태를 정의한다. 
+  - super(props)는 부모 클래스의 생성자를 호출한다. 
+- state 초기값: 
+  - notifications 배열은 빈 배열로 초기환된다. 
+  - 알림 데이터를 순차적으로 추가하여 업데이트 된다. 
 
+#### 문제가 된 componentDidMount 
+- 수정이 된 버전
 
+```jsx
+componentDidMount() {
+    this.timer = setInterval(() => {
+        this.setState((prevState) => {
+            if (prevState.notifications.length < reservedNotifications.length) {
+                return {
+                    notifications: [
+                        ...prevState.notifications,
+                        reservedNotifications[prevState.notifications.length],
+                    ],
+                };
+            }
+            return prevState;
+        });
+    }, 1000);
+}
+``` 
+- 역할: 
+  - 컴포넌트가 처음 랜더링된 직후 실행 
+  - setlnterval을 사용하여 1초마다 상태를 업데이트한다. 
+- 작동 방식: 
+  - 1. 1초마다 setState를 호출 
+  - 2. 현재 알림 배열의 길이(prevState.notitications.length)를 기준으로 다음 알림을 추가 
+  - 3. 모든 알림이 추가되면 상태를 더 이상 업데이트하지 않는다.
 #### 수정본
 ```jsx
 import React from "react";
