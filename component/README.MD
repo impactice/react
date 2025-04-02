@@ -325,7 +325,7 @@ componentDidMount() {
                     ],
                 };
             }
-            return prevState;
+            return prevState; // 알림 목록을 초기화하지 않음
         });
     }, 1000);
 }
