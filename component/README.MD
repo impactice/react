@@ -254,6 +254,11 @@ export default CommentList;
 - **State**를 이해하고 효과적으로 사용하는 것은 React 개발 능력을 향상시키는 데 필수적입니다.
 ![Image](https://github.com/user-attachments/assets/c4264d75-05b2-4ab2-b2a8-9a8a1498fb8e)
 
+# State와 props
+- props는 properties를 의미하며 부모 컴포넌트에서 자식 컴포넌트로 데이터, 함수 같은 props를 컴포넌트에 주입 함으로써 데이터를 전달하고 컴포넌트를 조작할 수 있습니다. 
+
+-우리말로 "상태"로 번역되는 state는 데이터를 동적으로 변경해야 할 때 사용하는 것으로 일종의 컴포넌트 부품입니다. props가 읽기 전용인데 비해 state는 쓰기까지 가능한 것이 특징이며, state로 정의한 값이나 함수는 변경이 가능합니다. 원래 이 state는 react가 초기에 나왔을 때 널리 사용된 클래스형 컴포넌트에만 존재했었습니다. 그러
+다 함수 컴포넌트가 등장했는데, 초기 함수 컴포넌트는 이 state를 사용하지 못한다는 치명적인 단점을 안고 있었습니다. React v16.8+ 이후 React Hooks가 나옴에 따라 함수 컴포넌트에서도 이 state가 사용 가능하게 되었고, state 값을 변경 해주는 메서드는 클래스형과 함수형 각각 'setState()'와 'useState()'로 대응되었습니다.
 
 # 실습하기 
 - chapter_06 폴더에 Notification.jsx와 NotificationList.jsx 파일 생성
