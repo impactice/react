@@ -252,7 +252,7 @@ export default CommentList;
 - **State** 값이 변경되면 React가 자동으로 렌더링을 다시 수행합니다.
 - **State**는 React 컴포넌트에서 변화하는 데이터를 관리하는 핵심 개념입니다.
 - **State**를 이해하고 효과적으로 사용하는 것은 React 개발 능력을 향상시키는 데 필수적입니다.
-
+![Image](https://github.com/user-attachments/assets/c4264d75-05b2-4ab2-b2a8-9a8a1498fb8e)
 
 
 # 실습하기 
