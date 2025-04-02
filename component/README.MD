@@ -310,7 +310,12 @@ componentDidMount() {
       }
     }, 1000);
   }
-```
+``` 
+- 알림 초기화 제거:
+```jsx
+this.setState({ notifications: [] });
+``` 
+
 - 수정이 된 버전
 
 ```jsx
