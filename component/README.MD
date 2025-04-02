@@ -242,6 +242,7 @@ export default CommentList;
 # State
 
 # 실습하기 
+- chapter_06 폴더에 Notification.jsx와 NotificationList.jsx 파일 생성
 - Notification.jsx
 ```jsx 
 import React from "react";
