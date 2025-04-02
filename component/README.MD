@@ -146,5 +146,97 @@ root.render(<App />);
 ``` 
 # mutable immutable 차이
 - Mutable한 객체는 생성된 이후에 상태가 변경될 수 있는 객체이고, Immutable한 객체는 생성된 이후에 상태가 변경되지 않는 객체를 말한다.
+
+# 실습하기 
+- index.js
+```jsx 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import CommentList from './chapter_05/CommentList';
+const root = document.getElementById("root");
+ReactDOM.createRoot(root).render(<CommentList />);
+``` 
+- Comment.js
+```jsx 
+import React from "react";
+const styles = {
+    wrapper: {
+        margin: 8,
+        padding: 8,
+        display: "flex",
+        flexDirection: "row",
+        border: "1px solid grey",
+        borderRadius: 16,
+    },
+    imageContainer: {},
+    image: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+    },
+    contentContainer: {
+        marginLeft: 8,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+    }, nameText: {
+        color: "black",
+        fontsize: 16,
+        fontWeight: "bold",
+    },
+    commentText: {
+        color: "black",
+        fontSize: 16,
+    },
+}; function Comment(props) {
+    return (
+        <div style={styles.wrapper}>
+            <div style={styles.imageContainer}>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+                    alt='작성자그림'
+                    style={styles.image}
+                />
+            </div>
+            <div style={styles.contentContainer}>
+                <span style={styles.nameText}>{props.name}</span>
+                <span style={styles.commentText}>{props.comment}</span>
+            </div>
+        </div>
+    );
+}
+export default Comment;
+```
+- CommentList.js 
+```jsx
+import React from "react";
+import Comment from "./Comment";
+const comments = [
+    {
+        name: "홍길동",
+        comment: "안녕하세요! 홍길동입니다.",
+    },
+    {
+        name: "유재석",
+        comment: "리액트 재밌어요~~.",
+    },
+    {
+        name: "최예진",
+        comment: "안녕하세요! 프론트엔드 개발자입니다.",
+    },
+]; function CommentList(props) {
+    return (
+        <div>
+            {comments.map((comment) => {
+                return (
+                    <Comment name={comment.name}
+                        comment={comment.comment} />
+                );
+            })}
+        </div>
+    );
+}
+export default CommentList; 
+```
 # Notification.jsx와 오류 해결법 
 
