@@ -291,6 +291,26 @@ constructor(props) {
   - 알림 데이터를 순차적으로 추가하여 업데이트 된다. 
 
 #### 문제가 된 componentDidMount 
+- 수정이 되기 전 버전 
+```jsx
+componentDidMount() {
+    const { notifications } = this.state;
+    timer = setInterval(() => {
+      if (notifications.length < reservedNotifications.length) {
+        const index = notifications.length;
+        notifications.push(reservedNotifications[index]);
+        this.setState({
+          notifications: notifications,
+        });
+      } else {
+        this.setState({
+          notifications: [],
+        });
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+```
 - 수정이 된 버전
 
 ```jsx
