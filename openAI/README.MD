@@ -50,3 +50,8 @@
 ![Image](https://github.com/user-attachments/assets/d5684f67-ae6d-4c0d-a772-3d6aa68b85f6) 
 
 ![Image](https://github.com/user-attachments/assets/de28d4b5-252e-4ba9-8870-05f378ed40f4)
+
+## 복잡한 입찰안내서, AI가 분석해 준다고? 
+![Image](https://github.com/user-attachments/assets/5618266f-427b-483a-9506-08bafa83d8f3) 
+
+![Image](https://github.com/user-attachments/assets/7641a858-4215-4f9c-8652-ba1a5ab38aee) 
