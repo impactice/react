@@ -68,3 +68,36 @@
 ![Image](https://github.com/user-attachments/assets/0db97b18-ae51-42f6-97f4-fee72bb28265) 
 ![Image](https://github.com/user-attachments/assets/7753cab7-f282-48d8-9ad0-9e7f8131ad2e) 
 ![Image](https://github.com/user-attachments/assets/7c98fa5e-36a1-4e83-b23f-a2f4ce96fc12)
+
+## AI, 얼마나 쓰고 있나? 
+**국내 기업 72%, 생성형 AI를 쓰고 있다** 
+![Image](https://github.com/user-attachments/assets/f0bf62fa-e1cb-4bd9-be9e-1896a9436158) 
+![Image](https://github.com/user-attachments/assets/5831055d-5b4a-4bda-9184-521ff5ec1a6a) 
+
+## AI 인재 양성, 여전히 중요한 과제 
+![Image](https://github.com/user-attachments/assets/ef68b3a6-0c44-4fdd-8abf-9d76a860fd23) 
+
+## AI발 노동시장 지각변동, 이미 시작되었다 
+![Image](https://github.com/user-attachments/assets/1d004a4b-cf77-4e77-a79f-ee560415a1a1) 
+ 
+- AI가 인력 및 조직에 미치는 영향을 대비하기 위해, 고용주들이 2025-2030년에 계획하고 있는 전략에 대해 조사 
+- 41%의 기업에서 AI가 인간의 업무를 대체할 수 있는 경우, 인력을 감축하겟다고 응답 
+- 최근 몇 년 동안 파일 저장 서비스 업체인 '드롭박스'와 모바일 학습플랫폼 '듀오링고'등 일부 기술 업체들은 AI를 해고의 이유로 제시하였음 
+
+## AI를 둘러싼 법적, 윤리적 쟁점 구체화 
+**전쟁의 판을 바꾸는 AI기술. 윤리 VS 효울?** 
+![Image](https://github.com/user-attachments/assets/75b148f0-956b-4289-94c9-893824f2810f) 
+![Image](https://github.com/user-attachments/assets/b9de4ca0-3df3-4aa7-8661-581509045600) 
+
+## 바르게 쓰는 것도 일이다 
+**"개인정보, 기업정보, 기밀정보 입력은 X"** 
+![Image](https://github.com/user-attachments/assets/81b205d0-8831-4133-8ac0-f40c08044314) 
+![Image](https://github.com/user-attachments/assets/4263365f-b394-460d-a9bb-643df955dca2) 
+
+## 창작의 영역은 어디까지인가? 
+![Image](https://github.com/user-attachments/assets/f7d30d0f-b218-44d8-a705-3c1ec1cb270f) 
+
+## AI 프로젝트, 80% 이상이 실패한다... 일반적 IT 프로젝트 실패율의 두 배 
+![Image](https://github.com/user-attachments/assets/c9f908ab-8f02-426a-bdea-5b292abcb207) 
+![Image](https://github.com/user-attachments/assets/4e4f02f5-e879-4dbb-9ed8-439ef886a2d7) 
+
