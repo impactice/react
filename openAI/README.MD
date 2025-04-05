@@ -55,3 +55,16 @@
 ![Image](https://github.com/user-attachments/assets/5618266f-427b-483a-9506-08bafa83d8f3) 
 
 ![Image](https://github.com/user-attachments/assets/7641a858-4215-4f9c-8652-ba1a5ab38aee) 
+
+## AI와 함께하는 설계? 
+![Image](https://github.com/user-attachments/assets/e17a413f-3484-4739-84d8-ec205673c9bc) 
+
+![Image](https://github.com/user-attachments/assets/484432d2-c634-4158-86e2-a5ca4d987871) 
+
+## 화학 분야의 생성형 AI 활용 
+![Image](https://github.com/user-attachments/assets/8c43b343-8470-4d38-8815-be82469bf2f1) 
+
+## 눈으로 듣는 소리, AI 시각화 장치 
+![Image](https://github.com/user-attachments/assets/0db97b18-ae51-42f6-97f4-fee72bb28265) 
+![Image](https://github.com/user-attachments/assets/7753cab7-f282-48d8-9ad0-9e7f8131ad2e) 
+![Image](https://github.com/user-attachments/assets/7c98fa5e-36a1-4e83-b23f-a2f4ce96fc12)
