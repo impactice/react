@@ -101,3 +101,50 @@
 ![Image](https://github.com/user-attachments/assets/c9f908ab-8f02-426a-bdea-5b292abcb207) 
 ![Image](https://github.com/user-attachments/assets/4e4f02f5-e879-4dbb-9ed8-439ef886a2d7) 
 
+## 당신이 오해하는 것 
+![Image](https://github.com/user-attachments/assets/4d5d46bf-2d0f-4bdb-bd80-4049f9b648fa) 
+
+## GPT의 동작 원리 
+![Image](https://github.com/user-attachments/assets/2ad58507-4202-45e2-b492-4d07b8747a69) 
+![Image](https://github.com/user-attachments/assets/7a1ee6d7-7b36-42c1-aca3-4f867df55147) 
+
+## 생성형 AI 활용 가이드라인 
+![Image](https://github.com/user-attachments/assets/78428c8f-b8b9-4c02-8727-1d25a816957d) 
+
+## AI에게 질문하기 어려운 이유? 
+![Image](https://github.com/user-attachments/assets/7c70e1b2-3d4e-4323-94f6-55f7cc394fe2) 
+![Image](https://github.com/user-attachments/assets/eb0d20e9-b332-4a28-8ec2-3d04a166911d) 
+
+## 프롬프트(prompt), 기억해 두세요 
+![Image](https://github.com/user-attachments/assets/3eeaec4f-3e6d-460e-943c-d5e034ed156a) 
+
+## 쉽게 익히게 하자! 
+![Image](https://github.com/user-attachments/assets/f49bc6d7-8a0b-4f0d-963d-e2754367d04e) 
+
+## 프롬프트 문법 외워서 쓰기, TOPFEC(토픽) 
+![Image](https://github.com/user-attachments/assets/f8eb71ba-5597-4539-8644-2445fb27a362) 
+![Image](https://github.com/user-attachments/assets/dd0234c2-7dcc-4434-a895-a710529d6160) 
+
+## 자료 조사하기 - 그냥 질문할 경우 
+![Image](https://github.com/user-attachments/assets/0c9e2206-c5ec-454d-80eb-81bd996e8abd) 
+
+## 자료 조사하기 - TOPFEC으로 하는 질문 
+![Image](https://github.com/user-attachments/assets/50374f1e-1fe2-4944-aa73-e6a76da42627) 
+![Image](https://github.com/user-attachments/assets/7b99cd55-e9ac-4861-ac53-6d53a412cafe) 
+![Image](https://github.com/user-attachments/assets/1ea48572-c71a-4a03-a5b3-157ac4bab01b) 
+
+## AI와 효과적으로 대화하기 
+**좋은 답변을 위한 다섯 가지 원칙** 
+- 구체적 지시: AI는 사용자의 마음 속을 들여다볼 수 없다 
+- 명확한 단어: 인공지능의 학습 과정을 고려해서, 인공지능이 이해할 수 있는 명확한 단어 사용 
+- 맥락 제공: 설명하기 복잡한 경우 예시나 맥락을 제공하면 좋다
+- 단계별 접근: 인공지능은 '생각'을 하는 것이 아니므로 적절한 추론 형식과 도출 과정 제시 
+- 일관성 유지: 마음에 드는 답변을 받았다면, 프롬프트를 '템플릿'처럼 사용하자 
+
+## 명확하게 지시하기 
+![Image](https://github.com/user-attachments/assets/47c8b605-a5d1-4289-9c68-6eb89a14af6f) 
+![Image](https://github.com/user-attachments/assets/f88da848-645e-451e-a4db-a260c1184f15) 
+![Image](https://github.com/user-attachments/assets/67b31ee8-6136-410d-ac9d-ea5e8a4fb2ef) 
+
+## 마크다운 활용하기 
+![Image](https://github.com/user-attachments/assets/295e8ca0-480d-43a9-883f-9ab8df7e1698) 
