@@ -48,3 +48,5 @@
 ## AI 상용화 원년 밝았다...DX를 넘어 AX로 
 **인공지능을 기업의 비즈니스에 도입하기 위한 구체적인 가이드라인과 방법론들이 나오고 있음** 
 ![Image](https://github.com/user-attachments/assets/d5684f67-ae6d-4c0d-a772-3d6aa68b85f6) 
+
+![Image](https://github.com/user-attachments/assets/de28d4b5-252e-4ba9-8870-05f378ed40f4)
