@@ -443,3 +443,56 @@
 - 프레젠테이션 생성, 마인드맵 생성, Notion에 저장등 기능 지원 
 
 # 시각화부터 PPT까지 
+## ChatGPT 
+- 파일을 추가를 한 다음 명령어를 내리면 파일을 토대로 해결한다
+- 한글이 깨질 경우에는 한글 폰트(KoPubWorld Dotum Medium)를 추가해서 해결한다 명령은 예를 들어 "한국어를 차트에 사용할 때에는 지금 업로드하는 폰트 파일을 활용해줘. 이 폰트를 사용해서 차트를 다시 그려줘" 
+- 계산한 결과를 바탕으로 차트를 그려준다 
+
+## Claude 
+- 게임등을 만들게 한 다음 실제로 해볼 수 있게 만들어달라고 하면 코드도 짜주고 실행도 가능하게 해준다 
+- 입력한 내용을 슬라이드를 만들어서 보여 달라고 하면 만들어 준다
+- 입력한 내용을 아티팩트를 활용해서 인포그래픽으로 만들어 달라고 하면 깔끔하게 정리해서 보여준다 
+
+## draw.io 
+- 주소창에 draw.io 입력 및 로그인 
+- 이쁜 템블릿을 통해 만들 수 있고 더 추가 할 수도 있다 
+
+## Napkin 
+- 입력한 내용을 토대로 적절한 이미지를 써서 보기 편하고 발표하기 좋은 템블릿을 만들어 준다 
+
+## AI PPT 제작의 5가지 장점 
+- 시간 절약: 슬라이드 디자인과 구성 자동화로 제작 시간이 대폭 단축됨 
+- 디자인 전문성: 누구나 전문가 수준의 디자인을 손쉽게 구현할 수 있음 
+- 사용자 친화성: 직관적인 인터페이스로 초보자도 쉽게 사용할 수 있음 
+- 효율적인 협업: 실시간 피드백 및 팀원과의 작업 공유 가능 
+- 유연성: 다양한 템플릿과 스타일을 즉시 변경 가능 
+
+## AI 발표 자료 제작의 기본 프로세스 
+- Step 1: 기획 자료 정리 
+ - 발표 주제와 목적 정리 
+ - 핵심 메시지와 전달할 내용을 간략히 문서화 
+- Step 2: AI 도구 선택 
+ - 감마,app: 자동화된 흐름과 깔끔한 디자인에 강점 
+ - Beautiful.ai: 직관적인 인터페이스와 다양한 템플릿 제공 
+- Step 3: 슬라이드 제작 
+ - 도입,본론,결론으로 나누어 AI 도구의 템플릿과 기능 활용 
+- Stop 4: 피드백 및 수정 
+ - 완성된 슬라이드 검토 및 사용자 경험을 반영한 수정 
+
+## AI 프레젠테이션 툴 비교 
+![Image](https://github.com/user-attachments/assets/5ef9f6d2-e9a4-41ac-a99e-259c37782daf) 
+
+## 만들기 
+![Image](https://github.com/user-attachments/assets/b61a5761-01ad-4a2c-b76d-be635bdfd7b8) 
+![Image](https://github.com/user-attachments/assets/cd927bd9-fdf8-4037-9582-2dbd95eb6fe7) 
+![Image](https://github.com/user-attachments/assets/d3b8a3c0-7eef-40c1-bfff-2740c841a32c) 
+![Image](https://github.com/user-attachments/assets/e04cbb9c-df4f-42a0-9d64-87ac30fabd46) 
+![Image](https://github.com/user-attachments/assets/10abeb2f-3a53-4a46-8201-8570b387211a) 
+![Image](https://github.com/user-attachments/assets/361e5627-c458-462e-9a5e-75f5bcd5dd60) 
+![Image](https://github.com/user-attachments/assets/8e6857bc-f907-4943-bf34-352a4f77aae0) 
+![Image](https://github.com/user-attachments/assets/3e4ae9a1-7729-45f5-ae7b-fce7d0fea84d)
+![Image](https://github.com/user-attachments/assets/748be0de-0222-4ee9-a8ed-3a6a8e98522a) 
+![Image](https://github.com/user-attachments/assets/92ec8561-142d-4d04-8c54-2730fdadedba)
+![Image](https://github.com/user-attachments/assets/1245c937-fffb-416a-bf58-ad6be618e862) 
+![Image](https://github.com/user-attachments/assets/2e994b64-6e3f-4b78-a4bc-108fcb6c6910) 
+![Image](https://github.com/user-attachments/assets/14cadb9e-10c1-45c8-a20a-415cb2ba8e4e)
