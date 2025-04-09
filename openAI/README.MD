@@ -643,6 +643,122 @@
 
 2. Image to Video
 이미지 하나를 가지고 움직이는 영상으로 만드는 기술  
+
+'''
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - 자기소개</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: #e0f0ff;
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PROJECT</h1>
+            <p>간단한 자기소개</p>
+        </header>
+        
+        <div class="profile">
+            <h2>홍길동</h2>
+            <p>웹 개발자</p>
+        </div>
+        
+        <section class="section">
+            <h2>소개</h2>
+            <p>안녕하세요! 저는 웹 개발에 관심이 많은 개발자입니다. 사용자 친화적인 웹사이트를 만드는 것을 좋아합니다.</p>
+        </section>
+        
+        <section class="section">
+            <h2>기술 스택</h2>
+            <div class="skills">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2025 PROJECT</p>
+        </footer>
+    </div>
+</body>
+</html> 
+'''
 마치 사진에 생명을 불어넣는 느낌으로,  
 예를 들어 풍경 사진을 입력하면 하늘이 움직이고 나무가 흔들리는 영상을 만들 수 있음
 
