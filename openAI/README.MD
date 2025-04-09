@@ -802,3 +802,41 @@
 </body>
 </html> 
 '''
+import React from 'react';
+
+export default function PersonalIntroduction() {
+  return (
+    <div className="bg-gray-100 text-gray-800 min-h-screen">
+      <div className="max-w-xl mx-auto p-4">
+        <header className="text-center py-8 bg-blue-500 text-white rounded mb-6">
+          <h1 className="text-3xl font-bold">PROJECT</h1>
+          <p className="mt-2">간단한 자기소개</p>
+        </header>
+        
+        <div className="text-center mb-6 p-6 bg-white rounded shadow">
+          <h2 className="text-xl font-bold">홍길동</h2>
+          <p className="text-gray-600">웹 개발자</p>
+        </div>
+        
+        <section className="mb-6 p-6 bg-white rounded shadow">
+          <h2 className="text-xl font-bold text-blue-500 mb-2">소개</h2>
+          <p>안녕하세요! 저는 웹 개발에 관심이 많은 개발자입니다. 사용자 친화적인 웹사이트를 만드는 것을 좋아합니다.</p>
+        </section>
+        
+        <section className="mb-6 p-6 bg-white rounded shadow">
+          <h2 className="text-xl font-bold text-blue-500 mb-2">기술 스택</h2>
+          <div className="flex flex-wrap gap-2">
+            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">HTML</span>
+            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">CSS</span>
+            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">JavaScript</span>
+            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">React</span>
+          </div>
+        </section>
+        
+        <footer className="text-center py-4 bg-gray-800 text-white rounded">
+          <p>© 2025 PROJECT</p>
+        </footer>
+      </div>
+    </div>
+  );
+}
