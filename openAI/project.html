@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+</head>
+<body>
+    <script>
+        // 새로운 h1 태그를 생성
+        var h1Tag = document.createElement('h1');
+        // h1 태그에 텍스트 추가
+        h1Tag.textContent = '정원희 홈페이지';
+        
+        // 새로운 h2 태그를 생성
+        var h2Tag = document.createElement('h2');
+        // h2 태그에 텍스트 추가
+        h2Tag.textContent = '취미: 운동';
+        
+        var h3Tag = document.createElement('h2');
+        // h2 태그에 텍스트 추가
+        h3Tag.textContent = '나이: 23';
+
+        // body 태그에 h1 태그와 h2 태그 추가
+        document.body.appendChild(h1Tag);
+        document.body.appendChild(h2Tag);
+        document.body.appendChild(h3Tag);
+    </script>
+</body>
+</html>
