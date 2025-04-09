@@ -680,163 +680,112 @@
 - 아직까지는 완벽하게 자연스러운 결과물을 얻기 어려울 수 있음
 
 ## runway
+- 카메라 앵글과 설명, 추가적인 디테일을 설정 해줄 수 있다 
+- 텍스트를 영상으로 만들어준다
+- 에러가 발생하면 프롬프트를 변경해야 함 
+- 한달에 여러번 크레딧을 이용하여 생성 가능하다 
 
+## Dream machine 
+- 한국어 안됨 
+- 텍스트를 영상으로 만들어준다 
 
+## video stew 
+- 2주간 무료 
+- 짧은 쇼츠 제작으로 최적화 되어 있음 
+- 텍스트도 넣을 수 있음 
 
+# 오디오 AI 활용 
+## typecast 
+- 한국어 ok
+- 캐릭터 선택 후 그 캐릭터에 비슷한 목소리가 나옴 
+- 각각의 문장을 다른 캐릭터로도 가능하다 
+- Claude등으로 이야기를 지어서 이야기 하는 것처럼 가능 
 
+## CLOVA Dubbing 
+- 프로젝트를 통해 목소리를 생성 가능 
+- 이야기를 읽어주는 목소리 구간 편집 가능
 
+## SUNO 
+- 음악 생성 
+- 하루에 5번 정도 프롬프트 가능 
+- 가사 생성 가능 
+- 가사 변경 가능 
+- 주소를 웹브라우저에 가능 
 
+# 반복되는 업무는 챗봇에게 
 
-'''
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - 자기소개</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 30px 0;
-            background-color: #3498db;
-            color: white;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        
-        .profile {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h2 {
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill {
-            background-color: #e0f0ff;
-            color: #3498db;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #333;
-            color: white;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>PROJECT</h1>
-            <p>간단한 자기소개</p>
-        </header>
-        
-        <div class="profile">
-            <h2>홍길동</h2>
-            <p>웹 개발자</p>
-        </div>
-        
-        <section class="section">
-            <h2>소개</h2>
-            <p>안녕하세요! 저는 웹 개발에 관심이 많은 개발자입니다. 사용자 친화적인 웹사이트를 만드는 것을 좋아합니다.</p>
-        </section>
-        
-        <section class="section">
-            <h2>기술 스택</h2>
-            <div class="skills">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>© 2025 PROJECT</p>
-        </footer>
-    </div>
-</body>
-</html> 
-'''
-import React from 'react';
+## GPTs란 무엇인가? 
+- GPTs는 챗GPT를 기반으로 한 특수 목적 AI앱입니다. 
+- 마치 여러분이 스마트폰에서 각각의 목적에 맞는 앱을 다운받아 사용하는 것처럼, GPTs도 특정 작업에 최적화된 AI 도구입니다. 
 
-export default function PersonalIntroduction() {
-  return (
-    <div className="bg-gray-100 text-gray-800 min-h-screen">
-      <div className="max-w-xl mx-auto p-4">
-        <header className="text-center py-8 bg-blue-500 text-white rounded mb-6">
-          <h1 className="text-3xl font-bold">PROJECT</h1>
-          <p className="mt-2">간단한 자기소개</p>
-        </header>
-        
-        <div className="text-center mb-6 p-6 bg-white rounded shadow">
-          <h2 className="text-xl font-bold">홍길동</h2>
-          <p className="text-gray-600">웹 개발자</p>
-        </div>
-        
-        <section className="mb-6 p-6 bg-white rounded shadow">
-          <h2 className="text-xl font-bold text-blue-500 mb-2">소개</h2>
-          <p>안녕하세요! 저는 웹 개발에 관심이 많은 개발자입니다. 사용자 친화적인 웹사이트를 만드는 것을 좋아합니다.</p>
-        </section>
-        
-        <section className="mb-6 p-6 bg-white rounded shadow">
-          <h2 className="text-xl font-bold text-blue-500 mb-2">기술 스택</h2>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">HTML</span>
-            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">CSS</span>
-            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">JavaScript</span>
-            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm">React</span>
-          </div>
-        </section>
-        
-        <footer className="text-center py-4 bg-gray-800 text-white rounded">
-          <p>© 2025 PROJECT</p>
-        </footer>
-      </div>
-    </div>
-  );
-}
+요약 
+- 특정 작업에 전문화된 AI 도우미 
+- 한 번의 설정으로 반복 사용 가능 
+- 사용자 맞춤형 응답 제공 
+
+## GPTs란 무엇인가? 
+일반 챗GPR와의 차이점 
+- 일반 챗GPT는 범용적인 AI 도구라면, GPTs는 특정 목적에 최적화된 전문 도구입니다. 
+
+챗GPT: 
+- 매번 상세한 설명 필요 
+- 다목적 사용 가능 
+- 일관성 유지를 위한 추가 설명 필요 
+
+GPTs: 
+- 즉시 사용 가능한 특화 기능 
+- 목적에 맞는 최적화된 응답 
+- 일관된 결과물 제공 
+
+## GPTs 스토어 활용법 
+접근 방법 
+GPTs 스토어는 수 많은 전문화된 AI 도구를 제공하는 플랫폼입니다. 
+
+접속 방법 
+- 챗GPT 웹사이트 접속 
+- 왼쪽 메뉴에서 'GPT 탑색" 선택 
+- 원하는 카테고리 브라우징 또는 검색 
+
+주요 카테고리 
+- 글쓰기 
+- 생산성 
+- 연구 및 분석 
+- 교육 
+- 라이프스타일 
+- 프로그래밍 
+
+## GPTs 스토어 활용법 
+좋은 GPTs 고르는 법 
+품질 좋은 GPTs를 선택하는 것이 성공적인 활용의 첫걸음 
+
+설명 문구 확인 
+- 목적이 명확한가? 
+- 주요 기능이 잘 설명되어 있는가?
+- 사용 방법이 이해하기 쉬운가?
+
+평점 체크 
+- 별점 4점이상 권장 
+- 최근 업데이트 확인 
+- 사용자 피드백 검토 
+
+사용자 수 확인 
+- 많은 사용자 = 검증된 품질 
+- 활발한 업데이트 여부 
+- 커뮤니티 반응 
+
+## ChatGPT의 GPT탐색 
+### Expedia 
+### GPT Finder 
+### image generator pro 
+### 유료이용자는 만들기를 할 수 있음 (회으록을 만들 수도 있음) 
+### Consensus 
+- 연구 자료 찾을 때 좋은 GPT 
+- 논문도 제시해줌 
+### 기업 분석 보고서 
+- 분석을 도와줌 
+### AI Prompt Generator 
+- 비즈니스 영어 하기 좋은 거
+## 웍스 AI 
+- 챗봇 만들기를 쉽게 해주는 곳 
+- 회의록 만들기 좋음 
+
