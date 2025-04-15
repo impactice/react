@@ -228,3 +228,52 @@ return (
 - Hooks의 등장으로 함수형 컴포넌트는 클래스형 컴포넌트와 동등한 기능을 수행할 수 있게 되었으며, 코드 간결성, 재사용성, 테스트 용이성 등 다양한 장점을 누릴 수 있게 되었습니다.
 
 ![Image](https://github.com/user-attachments/assets/a9afb8d7-02eb-45ed-b236-cd7df62e9bc6)
+
+- 원래 존재하는 어떤 기능에 갈고리(hook)를 거는 것처럼 끼어들어가 실행되는 것을 의미합니다.
+- 리액트의 훅도 state와 생명주기에 갈고리를 걸어 원하는 시점에 정해진 함수가 실행되도록 만든 것입니다. 이때 실행되는 함수를 훅이라고 정했습니다.
+- 이런 hook의 이름은 모두 use로 시작합니다. 커스텀 훅도 use로 시작하는 이름으로 정해서 훅이라는 것을 나타내 주어야 합니다.
+
+![Image](https://github.com/user-attachments/assets/6a8b0fb5-88ee-4377-ba22-e347ef039045) 
+
+## useState() 
+- chapter_07 폴더에 Counter.jsx 파일 생성 및 index.js 편집 -> F12
+- Counter.jsx
+```
+function Counter(props) {
+  var count = 0;
+  return (
+    <div>
+      <p>총 {count} 번 클릭했습니다.</p>
+      <button onClick={() => console.log(count++)}>
+        클릭
+      </button>
+    </div>
+  );
+}
+export default Counter;
+```
+- count 값은 변경되지만 재랜더링은 일어나지 않
+
+- index.js
+```
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Counter from './chapter_07/Counter';
+
+const root = document.getElementById("root");
+
+ReactDOM.createRoot(root).render(<Counter />);
+```
+
+- `useState` is a React Hook that lets you add a state variable to your component.
+- `useState`는 React 함수형 컴포넌트에서 상태(state)를 관리할 수 있도록 해주는 Hook입니다.
+- 클래스형 컴포넌트의 `this.state`와 `this.setState`를 대체합니다.
+- 상태를 관리하기 위해 사용하는 훅입니다.
+- 이 훅은 함수형 컴포넌트 내에서 상태 변수를 선언하고, 해당 상태를 업데이트하는 함수를 제공합니다.  
+  `useState`를 사용하면 컴포넌트가 렌더링될 때마다 상태를 유지할 수 있습니다.
+- 변수 각각에 대한 `set` 함수가 따로 존재합니다.
+
+![Image](https://github.com/user-attachments/assets/7ecbe509-63b2-400e-ae9d-ab350202c49f) 
+
+![image](https://github.com/user-attachments/assets/cfdf0584-87a5-4c80-b7ff-e3c2dfc02570)
+
