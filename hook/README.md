@@ -277,3 +277,80 @@ ReactDOM.createRoot(root).render(<Counter />);
 
 ![image](https://github.com/user-attachments/assets/cfdf0584-87a5-4c80-b7ff-e3c2dfc02570)
 
+- chatpter_07 폴더에 Counter2.jsx 파일 생성 및 index.js 편집
+
+- Counter2.jsx
+```jsx
+import React, { useState } from "react";
+
+function Counter2(props) {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <div>
+      <p>총 {count} 번 클릭했습니다.</p>
+      <button onClick={() => setCount(count + 1)}>
+        클릭
+      </button>
+    </div>
+  );
+}
+
+export default Counter2;
+```
+
+- index.js
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Counter2 from './chapter_07/Counter2';
+
+const root = document.getElementById("root");
+ReactDOM.createRoot(root).render(<Counter2 />);
+```
+
+- useEffect is a React Hook that lets you synchronize a component with an external system.
+- useEffect() Hook은 함수형 컴포넌트 내에서 부수 효과(side effect)를 수행할 수 있도록 해줍니다.
+- 부수 효과란 컴포넌트의 주요 기능 외에 추가적으로 실행되는 작업을 의미하며, 데이터 fetching, 구독, DOM 직접 조작, 타이머 설정 등이 대표적입니다.
+- 클래스형 컴포넌트의 componentDidMount, componentDidUpdate, componentWillUnmount를 대체합니다.
+- useEffect는 두 개의 인자를 받습니다. 첫 번째 인자는 사이드 이펙트를 수행하는 함수이고, 두 번째 인자는 의존성 배열입니다. 의존성 배열은 이펙트가 실행될 조건을 정의합니다.
+
+![image](https://github.com/user-attachments/assets/c70b344f-32bd-4f9f-a001-c5968b31f2e6)
+
+![image](https://github.com/user-attachments/assets/77530914-f861-4872-8995-1668789b6898)
+
+- chapter_07 폴더에 Counter.jsx 파일 생성 및 index.js 편집
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function Counter3(props) {
+  const [count, setCount] = useState(0);
+
+  // componentDidMount, componentDidUpdate와 비슷하게 작동합니다.
+  useEffect(() => {
+    // 브라우저 API를 사용해서 document의 title을 업데이트합니다.
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>총 {count}번 클릭했습니다.</p>
+      <button onClick={() => setCount(count + 1)}>
+        클릭
+      </button>
+    </div>
+  );
+}
+
+export default Counter3;
+```
+
+- index.js
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Counter3 from './chapter_07/Counter3';
+
+const root = document.getElementById("root");
+ReactDOM.createRoot(root).render(<Counter3 />);
+```
