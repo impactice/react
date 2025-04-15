@@ -66,4 +66,157 @@ const Counter = () => {
 }
 
 export default Counter;
+```
+
+### 일반 변수를 사용하는 경우 
+- 화면은 변경되지 않는다
+- 그렇다고 count가 변경되지 않은 것은 아니다(f12)
+- plus 함수와 minus함수를 실행한 후에 콘솔로 count 값을 출력해 보면 count 값은 정상적으로 변경됨을 알 수 있다
+- 그렇다면 화면이 변경되지 않은 이유는 무엇일까?
+- 화면이 변경되지 않은 이유는 일반 변수를 사용했기 때문이다
+- 일반 변수는 변경되어도 자동으로 화면이 재랜더링 되지 않는다
+- 하지만 state는 다르다
+- 리액티브한 프론트엔드에서 상태는 단순한 변수가 아니라 이 값이 변했을 때 화면에 반영되도록 연결된 것을 상태라고 한다
+- 그래서 state가 아닌 일반 변수는 바뀌어도 화면이 변하지 않는 것이다
+
+### state를 사용하는 경우 
+- 함수가 실행될 때마다 setCount로 기존의 count 값을 count+1 혹은 count-1로 변경해 주었다
+- 일반 변수가 아닌 state를 사용하면 변수 값이 변결되었을 때 화면이 의도대로 재랜더링됨을 알 수 있다
+
 ```javascript
+import { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  console.log(count);
+
+  const plus = () => {
+    setCount(count + 1);
+  }
+
+  const minus = () => {
+    setCount(count - 1);
+  }
+
+  return (
+    <div className='container'>
+      <h2 className='int'>{ count }</h2>
+      <button className='plus' onClick={plus}>+</button>
+      <button className='minus' onClick={minus}>-</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+- 참고로 리액트 컴포넌트는 부모 컴포넌트가 리렌더링 되면 자식 컴포넌트 또한 리렌더링 된다 (바뀐 내용이 없다 할지라도)
+
+### setState는 비동기적으로 작동한다 
+- setSate는 비동기적으로 동작하는데, setState 바로 아래에 console.log로 count를 출력해 봤을 때 확인 할 수 있다
+- 분명히 setCount로 count를 변경했는 데, 변경한 후에 console.log로 찍어보니 값이 바로 바뀌지 않는다 
+```javascript
+import { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const plus = () => {
+    setCount(count + 1);
+    console.log(count);
+    // setCount로 count를 변경한 후 바로 콘솔에 찍었다
+  }
+
+  const minus = () => {
+    setCount(count - 1);
+    console.log(count);
+    // setCount로 count를 변경한 후 바로 콘솔에 찍었다
+  }
+
+  return (
+    <div className='container'>
+      <h2 className='int'>{ count }</h2>
+      <button className='plus' onClick={plus}>+</button>
+      <button className='minus' onClick={minus}>-</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+- 그 이유는 `setState`가 **비동기**이기 때문이다.
+
+- **동기(Synchronous: 동시에 발생하는)**  
+  - 요청을 보냈다면, 응답을 받아야 다음 동작이 이루어진다.  
+  - 순차적으로 실행되기 때문에, 어떤 작업이 수행 중이라면 다음 작업은 대기해야 한다.  
+  - 블로킹(작업 중단)이 발생한다.
+
+- **비동기(Asynchronous: 동시에 발생하지 않는)**  
+  - 작업 종료 여부에 관계없이 다음 작업을 실행한다.  
+  - 그러므로 동기 방식과는 달리 실행 순서를 보장하지 않는다.  
+  - 블로킹이 발생하지 않는다.
+
+- `setCount`는 이벤트 핸들러 안에서 현재 `state` 값에 대한 변화를 요청하기만 하는 것이라서  
+  이벤트 핸들러가 끝나고 리액트가 상태를 바꾸고 화면을 다시 그리기를 기다려야 한다.
+
+
+- 리액트는 이벤트 핸들러가 닫히는 시점에 `setState`를 종합하여 한 번에 처리한다.
+
+- `state`도 결국 객체이기 때문에, 같은 키 값을 가진 경우라면 가장 마지막 실행값으로 덮어씌워지는데  
+  이는 객체를 합치는 함수인 `Object.assign()`에서 확인할 수 있다.
+
+- 아래처럼 `plus` 함수 안에 `setCount`를 세 번 썼을 때,  
+  1+2+3으로 6씩 증가하는 것이 아니라 마지막 `setCount`의 결과인 3씩 증가하게 된다.
+
+- App.js
+```javascript
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+return (
+  <>
+    <h1>{number}</h1>
+    <button onClick={() => {
+    setNumber(number + 1);
+    console.lon(number)
+    setNumber(number + 2);
+    console.lon(number)
+    setNumber(number + 3);
+    console.lon(number)
+  }}>+3</button>
+  </>
+)
+}
+```
+
+- 만약 6씩 더하고 싶은 거라면, 이문제는 이렇게 하면 해결된다
+- setCount(count+1)에서 count는 렌더링 시작 시점의 count이기 때문에 count가 최근에 바뀌었어도 반영 되지 않는다
+- 하지만 이렇게 콜백 함수를 사용하면 항상 최신의 값을 인자로 받아와서 처리하기 때문에 setCount(count => count +1)를 쓰면 최신 값을 받아서 처리할 수 있다
+
+
+- App.js
+```javascript
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+return (
+  <>
+    <h1>{number}</h1>
+    <button onClick={() => {
+    setNumber(number => number + 1);
+    console.lon(number)
+    setNumber(number => number + 2);
+    console.lon(number)
+    setNumber(number => number + 3);
+    console.lon(number)
+  }}>+3</button>
+  </>
+)
+}
+```
+
+### setState는 왜 비동기적으로 동작할까 
+- state는 값이 변경되면 리렌더링이 발생하는데, 변경되는 state가 많을수록 리렌더링이 계속 일어나고 속도도 저하되는 등, 성능적으로 문제가 많을 것이다.
+- 그래서 16ms 동안 변경된 상태 값들을 모아서 한 번에 리엔더링을 진행하는데 이를 batch(일괄) update라고 한다
+
