@@ -89,6 +89,8 @@ function App() {
 
 export default App;
 ```
+
+- 비동기기
 ```javascript
 import React, { useState, useEffect } from 'react';
 import './App.css';
@@ -124,6 +126,144 @@ function App() {
         <p>{isLoading ? '로딩 중...' : message}</p>
         <button onClick={handleAsyncOperation} disabled={isLoading}>
           {isLoading ? '처리 중...' : '비동기 작업 시작'}
+        </button>
+        <p className="instruction">
+          개발자 도구의 콘솔을 열어 로그를 확인하세요
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+- 블로킹
+
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [status, setStatus] = useState('준비 완료');
+  const [buttonEnabled, setButtonEnabled] = useState(true);
+  
+  const handleBlockingOperation = () => {
+    console.log('1. 블로킹 함수 시작');
+    
+    setButtonEnabled(false);
+    setStatus('처리 중...');
+    
+    console.log('2. 상태 업데이트 시도 (아직 렌더링 안됨)');
+    
+    // 블로킹 작업 시작
+    console.log('3. 블로킹 작업 시작');
+    const startTime = performance.now();
+    
+    // CPU를 집중적으로 사용하는 블로킹 연산
+    let result = 0;
+    for (let i = 0; i < 2000000000; i++) {
+      result += i % 2;
+    }
+    
+    const endTime = performance.now();
+    const timeElapsed = (endTime - startTime).toFixed(2);
+    
+    console.log(`4. 블로킹 작업 완료: ${timeElapsed}ms 소요, 결과: ${result}`);
+    
+    setStatus(`처리 완료! (${timeElapsed}ms 소요)`);
+    setButtonEnabled(true);
+    
+    console.log('5. 블로킹 함수 종료');
+  };
+  
+  console.log('6. 컴포넌트 렌더링, 현재 상태:', status);
+  
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>React 블로킹 예제</h1>
+        <p className="status">{status}</p>
+        <button 
+          onClick={handleBlockingOperation} 
+          disabled={!buttonEnabled}
+        >
+          블로킹 작업 실행
+        </button>
+        <p className="instruction">
+          개발자 도구의 콘솔을 열고 버튼을 클릭하세요.<br />
+          UI가 완전히 멈추는 것을 확인할 수 있습니다.
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+- 논블로킹
+
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [message, setMessage] = useState("준비 완료");
+  const [progress, setProgress] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
+  
+  const handleNonBlockingOperation = () => {
+    console.log('1. 논블로킹 함수 시작');
+    setIsProcessing(true);
+    setMessage("처리 중...");
+    setProgress(0);
+    
+    // 논블로킹 방식으로 무거운 작업 분할 처리
+    const totalIterations = 5;
+    let currentIteration = 0;
+    
+    const processChunk = () => {
+      console.log(`3. 청크 처리 #${currentIteration + 1}/${totalIterations}`);
+      
+      // 각 청크에서 일부 작업 수행
+      setTimeout(() => {
+        currentIteration++;
+        const newProgress = Math.round((currentIteration / totalIterations) * 100);
+        setProgress(newProgress);
+        
+        if (currentIteration < totalIterations) {
+          // 아직 작업이 남았으면 다음 청크 예약
+          console.log(`4. 진행률: ${newProgress}%, 다음 청크 예약`);
+          setTimeout(processChunk, 500);
+        } else {
+          // 모든 작업 완료
+          console.log('5. 모든 청크 처리 완료');
+          setMessage("처리 완료!");
+          setIsProcessing(false);
+        }
+      }, 500);
+    };
+    
+    console.log('2. 첫 번째 청크 예약');
+    setTimeout(processChunk, 0);
+  };
+  
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>setTimeout 논블로킹 예제</h1>
+        <p>{message}</p>
+        {isProcessing && (
+          <div className="progress-container">
+            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+            <p>{progress}%</p>
+          </div>
+        )}
+        <button 
+          onClick={handleNonBlockingOperation} 
+          disabled={isProcessing}
+        >
+          논블로킹 작업 시작
         </button>
         <p className="instruction">
           개발자 도구의 콘솔을 열어 로그를 확인하세요
