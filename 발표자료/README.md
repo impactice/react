@@ -21,3 +21,71 @@
 ![image](https://github.com/user-attachments/assets/79dd5b1d-8d85-4afb-9662-9f1565b1640a)
 
 ![image](https://github.com/user-attachments/assets/b8ef2650-4f26-45db-acc3-a2a9f901fcaf)
+
+
+- 동기
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [processingTime, setProcessingTime] = useState(0);
+  
+  console.log('App 컴포넌트 렌더링 시작, 현재 count:', count);
+  
+  const handleSyncOperation = () => {
+    console.log('1. 동기 함수 시작');
+    
+    // 현재 상태 기록
+    console.log('2. 동기 작업 전 count 값:', count);
+    
+    // 무거운 동기 작업 실행
+    console.log('3. 무거운 동기 작업 시작...');
+    const startTime = performance.now();
+    
+    // CPU를 점유하는 동기 작업
+    let result = 0;
+    for (let i = 0; i < 500000000; i++) {
+      result += (i % 3);
+    }
+    
+    const endTime = performance.now();
+    const timeSpent = (endTime - startTime).toFixed(2);
+    
+    console.log('4. 동기 작업 완료, 결과:', result);
+    console.log('5. 작업 소요시간:', timeSpent, 'ms');
+    
+    // 상태 업데이트
+    console.log('6. 상태 업데이트 전');
+    setCount(count + 1);
+    setProcessingTime(timeSpent);
+    
+    // 중요: 동기 함수에서는 상태 업데이트 후에도 이전 상태값이 유지됨
+    console.log('7. 상태 업데이트 직후 count 값 (아직 변경되지 않음):', count);
+    
+    console.log('8. 동기 함수 종료');
+  };
+  
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>React 동기 실행 예제</h1>
+        <p>현재 카운트: {count}</p>
+        {processingTime > 0 && (
+          <p>마지막 작업 소요시간: {processingTime} ms</p>
+        )}
+        <button onClick={handleSyncOperation}>
+          동기 작업 실행하기
+        </button>
+        <p className="instruction">
+          개발자 도구의 콘솔을 열어 로그를 확인하세요<br />
+          버튼 클릭 시 UI가 잠시 멈추는 것을 확인할 수 있습니다
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
