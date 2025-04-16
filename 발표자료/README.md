@@ -89,3 +89,49 @@ function App() {
 
 export default App;
 ```
+```javascript
+import React, { useState, useEffect } from 'react';
+import './App.css';
+
+function App() {
+  const [message, setMessage] = useState("초기 메시지");
+  const [isLoading, setIsLoading] = useState(false);
+  
+  console.log('1. 컴포넌트 렌더링 중, 현재 메시지:', message);
+  
+  const handleAsyncOperation = () => {
+    console.log('2. 비동기 함수 시작');
+    
+    setIsLoading(true);
+    console.log('3. 로딩 상태로 변경');
+    
+    console.log('4. setTimeout 호출 전 (비동기 작업 예약)');
+    
+    setTimeout(() => {
+      console.log('6. setTimeout 콜백 실행 (2초 후)');
+      setMessage(`업데이트된 메시지 (${new Date().toLocaleTimeString()})`);
+      setIsLoading(false);
+      console.log('7. 상태 업데이트 및 로딩 완료');
+    }, 2000);
+    
+    console.log('5. setTimeout 호출 후 (함수는 계속 실행)');
+  };
+  
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>React 비동기 setTimeout 예제</h1>
+        <p>{isLoading ? '로딩 중...' : message}</p>
+        <button onClick={handleAsyncOperation} disabled={isLoading}>
+          {isLoading ? '처리 중...' : '비동기 작업 시작'}
+        </button>
+        <p className="instruction">
+          개발자 도구의 콘솔을 열어 로그를 확인하세요
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
