@@ -977,3 +977,213 @@ function Counter() {
 ```
 
 - 이전 값 저장하기 
+
+```jsx
+import { useRef, useEffect, useState } from "react";
+
+function PreviousValue() {
+  const [count, setCount] = useState(0);
+  const prevCountRef = useRef();
+
+  useEffect(() => {
+    prevCountRef.current = count;
+  }, [count]);
+
+  return (
+    <div>
+      <p>현재 값: {count}</p>
+      <p>이전 값: {prevCountRef.current ?? '없음'}</p>
+      <button onClick={() => setCount(count + 1)}>증가</button>
+    </div>
+  );
+}
+```
+
+ - DOM 접근: useRef를 사용하여 DOM 요소에 접근할 수 있습니다. 예를 들어, 입력 필드에 포커스를 주거나, 특정 요소의 크기를 측정할 때 유용합니다.
+- 값 저장: useRef는 렌더링 간에 값을 유지할 수 있지만, current 프로퍼티를 변경해도 컴포넌트가 다시 렌더링되지 않습니다. 이는 상태(state)와의 차이점입니다.
+- 성능 최적화: useRef를 사용하면 불필요한 렌더링을 피할수 있습니다
+
+- Focus
+```jsx
+import { useRef } from 'react';
+
+function TextInputWithFocusButton(props) {
+  // useRef를 사용해 input 요소에 접근
+  const inputElem = useRef(null);
+
+  const onButtonClick = () => {
+    // 'current'는 마운트된 input element를 가리킴
+    inputElem.current.focus();
+  };
+
+  return (
+    <>
+      <input ref={inputElem} type="text" />
+      <button onClick={onButtonClick}>
+        Focus the input
+      </button>
+    </>
+  );
+}
+
+export default TextInputWithFocusButton;
+```
+## Hook의 규칙 
+1. Hook은 무조건 최상위 레벨에서만 호출해야 한다.
+  - Hook은 컴포넌트가 랜더링될 때마다 매번 같은 순서로 호출되어야 합니다.
+  - 잘못된 Hook 사용법
+
+```jsx
+import { useState, useEffect } from 'react';
+
+function MyComponent(props) {
+  const [name, setName] = useState('Inje');
+
+    if (name !== '') {
+      useEffect( () => {
+      ...
+    });
+  }
+  ...
+} 
+```
+
+2. 리액트 함수 콤포넌트에서만 Hook을 호출해야 합니다
+추천 플러그인 : https://www.npmjs.com/package/eslint-plugin-react-hooks
+
+## Custom Hook 
+- 이름이 use로 시작하고 내부에서 다른 Hook을 호출하는 하나의 자바스크립트 함수입니다.
+- 여러 컴포넌트에서 공통적으로 필요한 로직을 추출하여 코드의 중복을 줄이고, 유지보수를 용이하게 합니다.
+- 반복적으로 사용되는 로직을 재사용 가능하도록 추출한 함수입니다.
+- React의 기본 Hook(useState, useEffect, useRef 등)을 조합하여 새로운 기능을 만들 수 있습니다.
+- use로 시작하는 이름을 사용해야 합니다.
+- 내부에서 React의 다른 Hook을 사용할 수 있습니다.
+- 컴포넌트가 아닌 일반 함수이므로 렌더링과 관련 없는 로직도 포함할 수 있습니다.
+- Custom Hook을 활용하면 React 애플리케이션에서 반복되는 로직을 재사용 가능하게 분리할 수 있습니다.
+- 컴포넌트의 복잡도를 줄이고 유지보수를 쉽게 만들기 위해 적극적으로 활용하는 것이 좋습니다!
+
+- 기본적인 Custom Hook 예제 (카운터 관리)
+```jsx
+import { useState } from "react";
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(initialValue);
+
+  return { count, increment, decrement, reset };
+}
+
+export default useCounter;
+```
+
+```jsx
+import React from "react";
+import useCounter from "./useCounter";
+
+function CounterComponent() {
+  const { count, increment, decrement, reset } = useCounter(10);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+
+export default CounterComponent;
+```
+
+- API 호출을 위한 Custom Hook
+
+```jsx
+import React from "react";
+import useFetch from "./useFetch";
+
+function Users() {
+  const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/users");
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  return (
+    <ul>
+      {data.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default Users;
+```
+
+```jsx
+import { useState, useEffect } from "react";
+
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, [url]);
+
+  return { data, loading, error };
+}
+
+export default useFetch;
+```
+
+- 이전 상태 저장 Custom Hook
+```jsx
+import { useEffect, useRef } from "react";
+
+function usePrevious(value) {
+  const ref = useRef();
+
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+
+  return ref.current;
+}
+
+export default usePrevious;
+```
+
+```jsx
+import React, { useState } from "react";
+import usePrevious from "./usePrevious";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+
+  return (
+    <div>
+      <h2>현재 값: {count}</h2>
+      <h2>이전 값: {prevCount}</h2>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
