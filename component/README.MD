@@ -18,6 +18,7 @@
 ## Props의 개념
 - Props는 리액트에서 **속성(properties)** 을 의미하며, 부모 컴포넌트가 자식 컴포넌트에 전달하는 **데이터**입니다.
 - 자식 컴포넌트는 이 props를 **읽기 전용**으로 사용할 수 있습니다.
+
 ![Image](https://github.com/user-attachments/assets/a00c079c-2c5b-4726-9242-d309edae0a1c)
 
 - **Props**는 **Property**의 줄임말로, **속성**을 의미합니다.
