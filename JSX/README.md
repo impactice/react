@@ -181,6 +181,107 @@ function Button() {
 **JSX는 React에서 UI를 정의하는 데 있어 많은 장점을 제공합니다. 가독성이 높고, JavaScript 표현식을 사용할 수 있으며, 컴포넌트를 쉽게 재사용하고 조건부 렌더링을 구현할 수 있습니다. 이러한 이유로 많은 개발자들이 JSX를 선호합니다**
 
 ## JSX 사용법 
+1. JSX 기본 구조
+- JSX에서는 HTML과 유사한 문법을 사용하여 요소를 반환할 수 있다
+- JSX는 반드시 하나의 부모 요소로 감싸야 한다
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Hello, JSX!</h1>
+      <p>React에서 JSX를 사용합니다.</p>
+    </div>
+  );
+}
+```
+- 틀린 예
+```jsx
+function App() {
+  return (
+    <h1>Hello, JSX!</h1>
+    <p>React에서 JSX를 사용합니다.</p> // 에러 발생
+  );
+}
+```
+- 수정1
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Hello, JSX!</h1>
+      <p>React에서 JSX를 사용합니다.</p>
+    </div>
+  );
+}
+```
+- 수정2
+```jsx
+function App() {
+  return (
+    <>
+      <h1>Hello, JSX!</h1>
+      <p>React에서 JSX를 사용합니다.</p>
+    </>
+  );
+}
+```
+
+2. JSX에서 자바스크립트 표현식
+JSX 내부에서 JavaScript 표현식을 {}로 감싸서 사용할 수 있다
+```jsx
+const name = "React";
+function App() {
+  return <h1>Hello, {name}!</h1>;
+}
+```
+```jsx
+function getGreeting(name) {
+  return `Hello, ${name}!`;
+}
+
+function App() {
+  return <h1>{getGreeting("React")}</h1>;
+}
+```
+```jsx
+function App() {
+  return <p>2 + 3 = {2 + 3}</p>;
+}
+```
+
+3. JSX에서 속성(props) 사용
+JSX에서는 HTML 속성과 유사한 방식으로 속성을 설정할 수 있지만, 일부 속성은 JavaScript 문법을 따른다
+- 문자열 속성
+```jsx
+const imgUrl = "https://via.placeholder.com/150";
+
+function App() {
+  return <img src={imgUrl} alt="Sample Image" />;
+}
+```
+- 클래스 설정(className 사용)
+```jsx
+function App() {
+  return <h1 className="title">Hello, JSX!</h1>;
+}
+```
+- 객체 속성 사용(스타일 적용) 
+```jsx
+const styleObj = { color: "blue", fontSize: "20px" };
+
+function App() {
+  return <h1 style={styleObj}>Styled Text</h1>;
+}
+```
+
+4. JSX에서 조건부 렌더링
+JSX에서는 삼항 연산자를 사용하여 조건부 렌더링을 구현할 수 있다
+
+5. JSX에서 반복문 사용 (배열과 map())
+JSX에서는 for문을 직접 사용할 수 없고, map() 메서드를 이용해 반복 렌더링을 해야 한다
+
+6. JSX에서 이벤트 처리
+JSX에서는 이벤트를 onClick, onChange 등의 속성으로 설정할 수 있다
 ## JSX 코드 작성해보기 
 
 
