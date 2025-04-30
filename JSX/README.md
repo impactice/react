@@ -227,7 +227,7 @@ function App() {
 ```
 
 **2. JSX에서 자바스크립트 표현식**
-JSX 내부에서 JavaScript 표현식을 {}로 감싸서 사용할 수 있다
+- JSX 내부에서 JavaScript 표현식을 {}로 감싸서 사용할 수 있다
 ```jsx
 const name = "React";
 function App() {
@@ -250,7 +250,7 @@ function App() {
 ```
 
 **3. JSX에서 속성(props) 사용**
-JSX에서는 HTML 속성과 유사한 방식으로 속성을 설정할 수 있지만, 일부 속성은 JavaScript 문법을 따른다
+- JSX에서는 HTML 속성과 유사한 방식으로 속성을 설정할 수 있지만, 일부 속성은 JavaScript 문법을 따른다
 - 문자열 속성
 ```jsx
 const imgUrl = "https://via.placeholder.com/150";
@@ -275,7 +275,7 @@ function App() {
 ```
 
 **4. JSX에서 조건부 렌더링**
-JSX에서는 삼항 연산자를 사용하여 조건부 렌더링을 구현할 수 있다
+- JSX에서는 삼항 연산자를 사용하여 조건부 렌더링을 구현할 수 있다
 - 삼항 연산자를 이용한 조건부 렌더링 
 ```jsx
 function App({ isLoggedIn }) {
@@ -295,17 +295,110 @@ function App({ isAdmin }) {
 ```
 
 **5. JSX에서 반복문 사용 (배열과 map())**
-JSX에서는 for문을 직접 사용할 수 없고, map() 메서드를 이용해 반복 렌더링을 해야 한다
+- JSX에서는 for문을 직접 사용할 수 없고, map() 메서드를 이용해 반복 렌더링을 해야 한다
+- key 속성을 반드시 추가해야 React가 효율적으로 렌더링할 수 있다
+```jsx
+const fruits = ["🍎 Apple", "🍌 Banana", "🍊 Orange"];
+
+function App() {
+  return (
+    <ul>
+      {fruits.map((fruit, index) => (
+        <li key={index}>{fruit}</li> // key 속성 필수
+      ))}
+    </ul>
+  );
+}
+```
 
 **6. JSX에서 이벤트 처리**
-JSX에서는 이벤트를 onClick, onChange 등의 속성으로 설정할 수 있다
+- JSX에서는 이벤트를 onClick, onChange 등의 속성으로 설정할 수 있다
+```jsx
+function App() {
+  function handleClick() {
+    alert("버튼이 클릭되었습니다!");
+  }
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+```jsx
+function App() {
+  function handleChange(event) {
+    console.log("입력값:", event.target.value);
+  }
+
+  return <input type="text" onChange={handleChange} />;
+}
+```
+- JSX는 React에서 UI를 직관적으로 작성할 수 있도록 도와주는 JavaScript 확장 문법이다
+- JSX 내부에서 {}를 사용하여 JavaScript 표현식을 활용할 수 있다
+- JSX를 사용하면 조건부 렌더링, 반복 렌더링, 이벤트 처리 등이 편리해진다
+- JSX는 HTML과 유사하지만 JavaScript의 규칙을 따르므로 className, style={} 등의 차이점을 주의해야 한다
+
 ## JSX 코드 작성해보기 
+1. VS Code 실행하기
+2. 터미널 열기(&~)
+3. 프로젝트 생성 및 폴더 이동
+3.1 npx create-react-app react-app-ex01 
+3.2 cd react-app-ex01
+4. react-app-ex01 프로젝트의 src 폴더에 chapter_03 폴더 생성
+5. chapter_03 폴더에 Book.jsx 파일 생성
 
+- Book.jsx 
+```jsx
+import React from "react";
 
+function Book(props) {
+  return (
+    <div>
+      <h1>{`이 책의 이름은 ${props.name}입니다.`}</h1>
+      <h2>{`이 책은 총 ${props.numOfPage}페이지로 이뤄져 있습니다.`}</h2>
+    </div>
+  );
+}
 
+export default Book;
+```
 
+6. chapter_03 폴더에 Library.jsx 파일 생성
+- Library.jsx
+```jsx
+import React from "react";
+import Book from "./Book";
 
+function Library(props) {
+  return (
+    <div>
+      <Book name="처음 만난 파이썬" numOfPage={300} />
+      <Book name="처음 만난 AWS" numOfPage={400} />
+      <Book name="처음 만난 리액트" numOfPage={500} />
+    </div>
+  );
+}
 
+export default Library;
+```
+7. react-app-ex01 프로젝트의 src 폴더에 있는 index.js 편집
+-  index.js 
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import Library from './chapter_03/Library';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Library />
+  </React.StrictMode>
+);
 
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+8. 터미널에서 npm start 실행
