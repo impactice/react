@@ -181,7 +181,7 @@ function Button() {
 **JSX는 React에서 UI를 정의하는 데 있어 많은 장점을 제공합니다. 가독성이 높고, JavaScript 표현식을 사용할 수 있으며, 컴포넌트를 쉽게 재사용하고 조건부 렌더링을 구현할 수 있습니다. 이러한 이유로 많은 개발자들이 JSX를 선호합니다**
 
 ## JSX 사용법 
-1. JSX 기본 구조
+**1. JSX 기본 구조**
 - JSX에서는 HTML과 유사한 문법을 사용하여 요소를 반환할 수 있다
 - JSX는 반드시 하나의 부모 요소로 감싸야 한다
 ```jsx
@@ -226,7 +226,7 @@ function App() {
 }
 ```
 
-2. JSX에서 자바스크립트 표현식
+**2. JSX에서 자바스크립트 표현식**
 JSX 내부에서 JavaScript 표현식을 {}로 감싸서 사용할 수 있다
 ```jsx
 const name = "React";
@@ -249,7 +249,7 @@ function App() {
 }
 ```
 
-3. JSX에서 속성(props) 사용
+**3. JSX에서 속성(props) 사용**
 JSX에서는 HTML 속성과 유사한 방식으로 속성을 설정할 수 있지만, 일부 속성은 JavaScript 문법을 따른다
 - 문자열 속성
 ```jsx
@@ -274,13 +274,30 @@ function App() {
 }
 ```
 
-4. JSX에서 조건부 렌더링
+**4. JSX에서 조건부 렌더링**
 JSX에서는 삼항 연산자를 사용하여 조건부 렌더링을 구현할 수 있다
+- 삼항 연산자를 이용한 조건부 렌더링 
+```jsx
+function App({ isLoggedIn }) {
+  return <h1>{isLoggedIn ? "Welcome back!" : "Please log in"}</h1>;
+}
+```
+- && 연산자를 이용한 조건부 렌더링
+```jsx
+function App({ isAdmin }) {
+  return (
+    <div>
+      <h1>Hello, User!</h1>
+      {isAdmin && <p>관리자 권한이 있습니다.</p>}
+    </div>
+  );
+}
+```
 
-5. JSX에서 반복문 사용 (배열과 map())
+**5. JSX에서 반복문 사용 (배열과 map())**
 JSX에서는 for문을 직접 사용할 수 없고, map() 메서드를 이용해 반복 렌더링을 해야 한다
 
-6. JSX에서 이벤트 처리
+**6. JSX에서 이벤트 처리**
 JSX에서는 이벤트를 onClick, onChange 등의 속성으로 설정할 수 있다
 ## JSX 코드 작성해보기 
 
