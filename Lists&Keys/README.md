@@ -161,7 +161,7 @@ export default AttendanceBook;
 - 리액트 Form은 일반 HTML Form과 유사하지만, 리액트의 상태 관리 및 이벤트 처리 기능을 활용하여 더욱 강력하고 유연하게 작동합니다
 
 - 리액트 Form은 다음과 같은 요소로 구성됩니다
-  - <form> 태그: Form 전체를 감싸는 태그입니다.
+  - form 태그: Form 전체를 감싸는 태그입니다.
   - <input>, <textarea>, <select> 등의 입력 요소: 사용자로부터 데이터를 입력받는 요소입니다.
   - onChange 이벤트 핸들러: 입력 요소의 값이 변경될 때 호출되는 함수입니다.
   - onSubmit 이벤트 핸들러: Form이 제출될 때 호출되는 함수입니다.
