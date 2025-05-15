@@ -157,7 +157,9 @@ export default AttendanceBook;
 
 ## Form 
 - Form은 사용자 입력을 관리하고, 제출(submit) 이벤트를 처리하는 중요한 요소입니다
+
 - 리액트 Form은 일반 HTML Form과 유사하지만, 리액트의 상태 관리 및 이벤트 처리 기능을 활용하여 더욱 강력하고 유연하게 작동합니다
+
 - 리액트 Form은 다음과 같은 요소로 구성됩니다
   - <form> 태그: Form 전체를 감싸는 태그입니다.
   - <input>, <textarea>, <select> 등의 입력 요소: 사용자로부터 데이터를 입력받는 요소입니다.
