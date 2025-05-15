@@ -742,10 +742,209 @@ function App() {
 }
 export default App;
 ```
-컴포넌트 간의 관계가 복잡해짐 \n
-부모 컴포넌트가 변경되면, 자식 컴포넌트에도 영향이 미침 \n
-React에서는 상속보다 Composition을 권장 \n
+컴포넌트 간의 관계가 복잡해짐 
+부모 컴포넌트가 변경되면, 자식 컴포넌트에도 영향이 미침 
+React에서는 상속보다 Composition을 권장 
 
+## 합성 
+- 아래의 페이지는 두 개의 컴포넌트를 합성한 것입니다
 
+![image](https://github.com/user-attachments/assets/12885623-f440-4ca6-b01b-58db491b8583)
 
+- Containment (Containment 패턴)
+  - 컴포넌트 내부에 다른 컴포넌트를 포함할 때 사용합니다.
+  - children을 이용하여 컴포넌트의 내용을 유연하게 변경 가능합니다.
+  - 하위 컴포넌트를 포함하는 형태의 합성 방법입니다
 
+```
+function Card({ children }) {
+  return (
+    <div style={{ border: "1px solid gray", padding: "10px", borderRadius: "5px" }}>
+      {children}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Card>
+      <h2>안녕하세요</h2>
+      <p>이것은 카드 컴포넌트입니다.</p>
+    </Card>
+  );
+}
+export default App;
+```
+
+```
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
+function App(props) {
+  return (
+    <SplitPane
+      left={
+        <Contacts />
+      }
+      right={
+        <Chat />
+      }
+    />
+  );
+}
+```
+
+- Specialization (특정 기능을 확장하는 패턴)
+  - 특정 역할을 수행하는 컴포넌트를 만들 때 사용됩니다.
+  - 부모 컴포넌트의 기본 구조를 유지하면서, 일부만 변경 가능합니다.
+  - Welcome Dialog는 Dialog의 특별한 케이스입니다.
+  - 범용적인 개념을 구별이 되게 구체화하는 것입니다
+
+```
+function Dialog({ title, message }) {
+  return (
+    <div style={{ border: "1px solid black", padding: "10px" }}>
+      <h3>{title}</h3>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+function WarningDialog() {
+  return <Dialog title="경고!" message="이 작업은 취소할 수 없습니다." />;
+}
+
+function SuccessDialog() {
+  return <Dialog title="성공!" message="작업이 완료되었습니다." />;
+}
+```
+
+```
+function App() {
+  return (
+    <div>
+      <WarningDialog />
+      <SuccessDialog />
+    </div>
+  );
+}
+export default App;
+```
+
+- Higher-Order Components (HOC)
+  - HOC는 컴포넌트를 감싸서 기능을 확장하는 패턴입니다.
+  - React Hooks 이후 HOC보다 Custom Hook이 더 많이 사용됩니다
+
+```
+function withLogger(WrappedComponent) {
+  return function EnhancedComponent(props) {
+    console.log("컴포넌트가 렌더링됨:", WrappedComponent.name);
+    return <WrappedComponent {...props} />;
+  };
+}
+
+function Hello() {
+  return <h1>안녕하세요!</h1>;
+}
+
+const HelloWithLogger = withLogger(Hello);
+
+function App() {
+  return <HelloWithLogger />;
+}
+export default App;
+```
+
+```
+function Dialog(props) {
+    return (
+        <FancyBorder color="blue">
+            <h1 className="Dialog-title">
+                {props.title}
+            </h1> 
+            <p className="Dialog-message">
+                {props.message}
+            </p>
+            {props.children}
+        </FancyBorder>
+    );
+}
+```
+
+```
+const { useState } = require("react");
+
+function SignUpDialog(props) {
+    const [nickname, setNickname] = useState(''); 
+
+    const handleChange = (event) => {
+        setNickname(event.target.value);
+    } 
+
+    const handleSignUp = ( ) => {
+        alert('어서 오세요, ${nickname}님!');
+    } 
+
+    return (
+        <Dialog 
+            title="화성 탐사 프로그램" 
+            message="닉네임을 입력해 주세요.">
+            <input 
+                value={nickname} 
+                onChange={handleChange} />
+            <button onClick={handleSignUp}>
+                가입하기기
+            </button>
+        </Dialog>
+    );
+}
+```
+
+## 합성과 상속
+- 복잡한 컴포넌트를 쪼개서 여러 개의 컴포넌트로 만들고 만든 컴포넌트들을 조합해서 새로운 컴포넌트를 만들자!
+
+```
+import Card from "./Card";
+function ProfileCard(props) {
+  return (
+    <Card title="Inje Lee" backgroundColor="#4ea04e">
+      <p>안녕하세요, 소플입니다.</p>
+      <p>저는 리액트를 사용해서 개발하고 있습니다.</p>
+    </Card>
+  );
+}
+export default ProfileCard;
+
+```
+
+```
+function Card(props) {
+  const { title, backgroundColor, children } = props;
+  return (
+    <div
+      style={{
+        margin: 8,
+        padding: 8,
+        borderRadius: 8,
+        boxShadow: "0px 0px 4px grey",
+        backgroundColor: backgroundColor || "white",
+      }}
+    >
+      {title && <h1>{title}</h1>}
+      {children}
+    </div>
+  );
+}
+export default Card;
+
+```
